@@ -10,20 +10,17 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Step 1: Check out the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up the Java Development Kit (JDK)
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '21' # Specify the Java version you use
+          java-version: '21'
+          distribution: 'temurin' # تحديد التوزيعة (Temurin هو الأكثر شيوعًا)
 
-      # Step 3: Build the project with Maven
       - name: Build with Maven
         run: mvn clean package
 
-      # Step 4: Verify the generated JAR file
       - name: Verify JAR
         run: dir target/*.jar
