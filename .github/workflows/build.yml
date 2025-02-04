@@ -1,11 +1,9 @@
 ---
 name: Java CI
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: windows-latest
